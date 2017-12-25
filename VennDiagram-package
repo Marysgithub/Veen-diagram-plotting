@@ -1,4 +1,4 @@
-calculate.overlap：用于计算重叠
+1. calculate.overlap：用于计算重叠
 
 描述：确定韦恩图中重叠的值
 
@@ -27,3 +27,79 @@ x = list(
 "SuperSet" = superset
 )
 );
+
+2. draw.triple.venn 利用三组数据绘制韦恩图
+
+描述：
+使用三组数据创建一个韦恩图，当数组满足特定条件时创建欧拉图。
+
+使用方法：
+
+draw.triple.venn(area1, area2, area3, n12, n23, n13, n123, category =
+rep("", 3), rotation = 1, reverse = FALSE, euler.d =
+TRUE, scaled = TRUE, lwd = rep(2, 3), lty =
+rep("solid", 3), col = rep("black", 3), fill = NULL,
+alpha = rep(0.5, 3), label.col = rep("black", 7), cex
+= rep(1, 7), fontface = rep("plain", 7), fontfamily =
+rep("serif", 7), cat.pos = c(-40, 40, 180), cat.dist =
+c(0.05, 0.05, 0.025), cat.col = rep("black", 3),
+cat.cex = rep(1, 3), cat.fontface = rep("plain", 3),
+cat.fontfamily = rep("serif", 3), cat.just =
+list(c(0.5, 1), c(0.5, 1), c(0.5, 0)), cat.default.pos
+= "outer", cat.prompts = FALSE, rotation.degree = 0,
+rotation.centre = c(0.5, 0.5), ind = TRUE, sep.dist =
+0.05, offset = 0, cex.prop = NULL, print.mode = "raw",
+sigdigs = 3, direct.area = FALSE, area.vector = 0,
+...)
+
+参数：
+area1 第一组数据大小
+area2 第二组数据大小
+area3 第三组数据大小
+n12 第一组和第二组之间交集的大小
+n23 第二组和第三组之间交集的大小
+n13 第一组和第三组之间交集的大小
+n123 所有组之间交集的大小
+category 一串长度为3的向量给出集合的类别名称
+rotation 默认为1， 三组数据顺时针轮流
+reverse 布尔指示图片是否按照垂直轴对称
+euler.d 布尔指示是否绘制欧拉图-带有可移动环的韦恩图
+scaled 布尔指示是否在欧拉图中按比例缩放圆的大小
+lwd 三个向量确定圆的周长
+lty 三个向量确定圆周的线是否为点线
+col 三个向量确定圆周的颜色
+fill 三个向量确定圆的填充色
+alpha 三个向量确定填充色的透明度
+label.col 七个向量确定标签颜色
+cex 七个向量确定标签大小
+fontface 七个向量确定标签字体
+fontfamily 七个向量确定字体？
+cat.pos 三个向量确定类别名称的位置，默认值为0，代表12点方向
+cat.dist 三个向量确定类别名称的距离（从圆的边缘开始）
+cat.cex 三个向量给出类别名称的大小
+cat.col 三个向量给出类别名称的颜色
+cat.fontface 三个向量给出分类名称的字面？
+cat.fontfamily 三个向量确定分类名称的字体
+cat.just List of 3 vectors of length 2 indicating horizontal and vertical justification of
+each category name
+cat.default.pos
+One of c(’outer’, ’text’) to specify the default location of category names (cat.pos
+and cat.dist are handled differently)
+cat.prompts Boolean indicating whether to display help text on category name positioning or
+not)
+rotation.degree
+Number of degrees to rotate the entire diagram
+rotation.centre
+A vector (length 2) indicating (x,y) of the rotation centre
+ind Boolean indicating whether the function is to automatically draw the diagram
+before returning the gList object or not
+sep.dist Number between 0 and 1 giving the distance between circles in certain Euler
+diagrams with mutually exclusive sets
+offset Number giving the amount of offset from the centre in certain Euler diagrams
+with inclusive sets
+cex.prop A function or string used to rescale areas
+print.mode Can be either ’raw’ or ’percent’. This is the format that the numbers will be
+printed in. Can pass in a vector with the second element being printed under the
+first
+
+
