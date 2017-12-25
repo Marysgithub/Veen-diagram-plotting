@@ -1,0 +1,29 @@
+calculate.overlap：用于计算重叠
+
+描述：确定韦恩图中重叠的值
+
+使用方法：
+calculate.overlap(x)
+
+参数：
+x 一组向量 (e.g., 整型，字符型), 每部分对应韦恩图中的一个环 
+
+细节：
+该功能完善了venn.diagram() 函数，方便用户知道哪些值被分组到韦恩图的特定区域。
+
+值：
+返回一组数据对应韦恩图的每个区域
+
+作者：
+Christopher Lalansingh
+
+举例：
+# A simple single-set diagram
+cardiome <- letters[1:10]
+superset <- letters[8:24]
+overlap <- calculate.overlap(
+x = list(
+"Cardiome" = cardiome,
+"SuperSet" = superset
+)
+);
