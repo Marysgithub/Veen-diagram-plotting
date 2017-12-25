@@ -93,7 +93,49 @@ print.mode 可为’raw’ 或 ’percent’. 选择输出方式
 sigdigs 如果输出模式为百分比，就表明有多少显著数字被保留
 direct.area 如果等于真， 那么向量就会被传递到area.vector并被直接分配到相应区域，这仅适用于你知道向量对应于图中的哪个位置。 
 area.vector 当direct.area这个参数为真的时候，这就是对应的区域。
-... 其余参数比如页边距，Additional arguments to be passed, including margin, which indicates amount
-of whitespace around the final diagram in npc units
+... 其余参数比如页边距
+
+细节：
+如果euler.d == TRUE，则可用于19个特例。某些欧拉图使用的比参数scaled, sep.dist, or offset是和两组韦恩图？
+函数默认将三个圈放置在三角形位置上，两组在上，一组在下。are1,2,3是顺时针排列的。如果数值不能用要重新赋值。
+
+值：
+返回一组值。包含一些对象组成了韦恩图。网格可用于绘制图中的gList对象。
+
+作者:
+Hanbo Chen
+
+举例：
+Examples
+# A simple three-set diagram
+venn.plot <- draw.triple.venn(65, 75, 85,
+35, 15, 25, 5, c("First", "Second", "Third"));
+grid.draw(venn.plot);
+grid.newpage();
+# A more complicated diagram
+venn.plot <- draw.triple.venn(
+area1 = 65,
+area2 = 75,
+area3 = 85,
+n12 = 35,
+n23 = 15,
+n13 = 25,
+n123 = 5,
+category = c("First", "Second", "Third"),
+fill = c("blue", "red", "green"),
+lty = "blank",
+cex = 2,
+cat.cex = 2,
+cat.col = c("blue", "red", "green")
+);
+grid.draw(venn.plot);
+grid.newpage();
+# Demonstrating an Euler diagram
+venn.plot <- draw.triple.venn(20, 40, 60, 0, 0, 0, 0,
+c("First", "Second", "Third"), sep.dist = 0.1, rotation.degree = 30);
+# Writing to file
+tiff(filename = "Triple_Venn_diagram.tiff", compression = "lzw");
+grid.draw(venn.plot);
+dev.off();
 
 
