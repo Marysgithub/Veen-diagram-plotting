@@ -80,26 +80,20 @@ cat.cex 三个向量给出类别名称的大小
 cat.col 三个向量给出类别名称的颜色
 cat.fontface 三个向量给出分类名称的字面？
 cat.fontfamily 三个向量确定分类名称的字体
-cat.just List of 3 vectors of length 2 indicating horizontal and vertical justification of
-each category name
-cat.default.pos
-One of c(’outer’, ’text’) to specify the default location of category names (cat.pos
-and cat.dist are handled differently)
-cat.prompts Boolean indicating whether to display help text on category name positioning or
-not)
-rotation.degree
-Number of degrees to rotate the entire diagram
-rotation.centre
-A vector (length 2) indicating (x,y) of the rotation centre
-ind Boolean indicating whether the function is to automatically draw the diagram
-before returning the gList object or not
-sep.dist Number between 0 and 1 giving the distance between circles in certain Euler
-diagrams with mutually exclusive sets
-offset Number giving the amount of offset from the centre in certain Euler diagrams
-with inclusive sets
-cex.prop A function or string used to rescale areas
-print.mode Can be either ’raw’ or ’percent’. This is the format that the numbers will be
-printed in. Can pass in a vector with the second element being printed under the
-first
+cat.just 三个向量长度为2来水平或垂直调整每个类别名称
+cat.default.pos 用c(’outer’, ’text’)来确定类别名称的位置，注意和距离不一样
+cat.prompts 布尔指示是否输出类别名称位置的帮助文本
+rotation.degree 旋转整个图的度数
+rotation.centre 两个向量（X,Y）确定旋转的中心坐标
+ind 布尔提示是否在返回gList前自动绘图
+sep.dist 介于0，1之间的数值确定了互斥集的圆的距离
+offset 确定了互斥集欧拉圆的抵消数量
+cex.prop 重新缩放区域
+print.mode 可为’raw’ 或 ’percent’. 选择输出方式
+sigdigs 如果输出模式为百分比，就表明有多少显著数字被保留
+direct.area 如果等于真， 那么向量就会被传递到area.vector并被直接分配到相应区域，这仅适用于你知道向量对应于图中的哪个位置。 
+area.vector 当direct.area这个参数为真的时候，这就是对应的区域。
+... 其余参数比如页边距，Additional arguments to be passed, including margin, which indicates amount
+of whitespace around the final diagram in npc units
 
 
